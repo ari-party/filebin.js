@@ -1,0 +1,15 @@
+{
+  "name": "filebin.js",
+  "version": "1.0.0",
+  "description": "",
+
+  "main": "api.js",
+
+  "author": "HashedDev",
+  "license": "ISC",
+
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "request": "^2.88.2"
+  }
+}
