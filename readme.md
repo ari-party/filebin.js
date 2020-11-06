@@ -9,7 +9,8 @@ const filebin = require("filebin.js")
 
 filebin.upload("your file name", "the content of that file").then(promise => {
 
-})```
+})
+```
 
 ## Checklist
 
