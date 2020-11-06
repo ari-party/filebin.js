@@ -6,7 +6,7 @@
   "author": "HashedDev",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.4.1",
+    "fs": "0.0.1-security",
     "request": "^2.88.2"
   },
   "scripts": {
