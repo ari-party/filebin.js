@@ -6,7 +6,6 @@
   "author": "HashedDev",
   "license": "ISC",
   "dependencies": {
-    "fs": "0.0.1-security",
     "request": "^2.88.2"
   },
   "scripts": {
