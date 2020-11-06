@@ -1,5 +1,4 @@
 const request = require("request")
-const fs = require("fs");
 
 async function upload(file_name, file_data) {
     return new Promise(resolve => {
@@ -47,7 +46,3 @@ async function upload(file_name, file_data) {
 module.exports = {
     upload: upload
 }
-
-upload("package.json", "{ 'message': 'hey' }").then(info => {
-    console.log(info)
-})

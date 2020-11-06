@@ -1,15 +1,27 @@
 {
   "name": "filebin.js",
   "version": "1.0.0",
-  "description": "",
-
-  "main": "api.js",
-
+  "description": "A javascript api for filebin.net",
+  "main": "src/api.js",
   "author": "HashedDev",
   "license": "ISC",
-
   "dependencies": {
     "discord.js": "^12.4.1",
     "request": "^2.88.2"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HashedDev/filebin.js.git"
+  },
+  "keywords": [
+    "Filebin",
+    "API"
+  ],
+  "bugs": {
+    "url": "https://github.com/HashedDev/filebin.js/issues"
+  },
+  "homepage": "https://github.com/HashedDev/filebin.js#readme"
 }
