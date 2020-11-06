@@ -8,9 +8,7 @@
   "dependencies": {
     "request": "^2.88.2"
   },
-  "scripts": {
-    
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HashedDev/filebin.js.git"
