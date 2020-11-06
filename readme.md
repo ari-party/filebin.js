@@ -14,6 +14,6 @@ filebin.upload("your file name", "the content of that file").then(promise => {
 
 ## Checklist
 
-- [ x] Upload file
+- [x] Upload file
 - [ ] Download file
 - [ ] Get bin info
