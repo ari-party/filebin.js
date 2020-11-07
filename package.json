@@ -1,11 +1,12 @@
 {
   "name": "filebin.js",
-  "version": "1.0.8c",
+  "version": "1.0.9",
   "description": "A javascript api for filebin.net",
   "main": "src/api.js",
   "author": "HashedDev",
   "license": "ISC",
   "dependencies": {
+    "fs": "0.0.1-security",
     "request": "^2.88.2"
   },
   "scripts": {},
