@@ -39,10 +39,32 @@ filebin.download("bin id", "file name", "path to download to").then(promise => {
 // If you would log 'promise', it would return:
 "(path where it is downloaded)"
 ```
+#### getInfo
+```js
+const filebin = require("filebin.js")
+
+filebin.getInfo('bin id').then(promise => {
+
+})
+
+// If you would log 'promise', it would return:
+{
+    bin_id: '...',
+    bin_size_bytes: ...,
+    bin_files_size: ...,
+    bin_files: [
+        {
+            file_name: '...',
+            file_url: 'https://dev.filebin.net/.../...',
+            file_size_bytes: ...
+        }
+    ]
+}
+```
 
 ---
 ## Checklist 📃
 
-- [X] Upload file
+- [x] Upload file
 - [x] Download file
-- [ ] Get bin info
+- [x] Get bin info

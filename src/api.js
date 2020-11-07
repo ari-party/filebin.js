@@ -91,7 +91,53 @@ async function download(bin_id, file_name, path) {
             })
     })
 }
+
+/**
+ * Get information about a bin from 'dev.filebin.net'
+ * 
+ * @param {string} bin_id 
+ * @returns {object} { bin_id: '...', bin_size_bytes: ..., bin_files_size: ..., bin_files: [{ file_name '...', file_url: 'https://dev.filebin.net/.../...', file_size_bytes: ... }] }
+ * @throws {object} { message: "No data given/Error" }
+ */
+async function getInfo(bin_id) {
+    return new Promise(resolve => {
+        if (!bin_id) resolve({
+            message: "No data given/Error"
+        });
+
+        request.get({
+            uri: `https://dev.filebin.net/${bin_id}`,
+            headers: {
+                'Accept': 'application/json',
+                'Accept-Encoding': 'gzip, deflate, br',
+            },
+            gzip: true
+        }, function (err, res, body) {
+            const data = JSON.parse(res.body)
+                var bin_files = []
+                
+                data.files.forEach(file => {
+                    bin_files.push(
+                        {
+                            file_name: file.filename,
+                            file_url: `https://dev.filebin.net/${data.bin.id}/${file.filename}`,
+                            file_size_bytes: file.bytes
+                        }
+                    )
+                })
+
+                resolve({
+                    bin_id: data.bin.id,
+                    bin_size_bytes: data.bin.bytes,
+                    bin_files_size: data.bin.files,
+                    bin_files: bin_files
+                });
+        })
+    })
+}
+
 module.exports = {
     upload: upload,
-    download: download
+    download: download,
+    getInfo: getInfo
 }
