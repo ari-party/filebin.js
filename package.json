@@ -13,12 +13,15 @@
     "type": "git",
     "url": "git+https://github.com/HashedDev/filebin.js.git"
   },
-  "keywords": [
-    "Filebin",
-    "API"
-  ],
   "bugs": {
     "url": "https://github.com/HashedDev/filebin.js/issues"
   },
-  "homepage": "https://github.com/HashedDev/filebin.js#readme"
+  "homepage": "https://github.com/HashedDev/filebin.js#readme",
+  "keywords": [
+    "filebin",
+    "filebin api",
+    "filebin.js",
+    "filebin.js api",
+    "HashedDev"
+  ]
 }

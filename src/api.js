@@ -1,5 +1,14 @@
 const request = require("request")
 
+
+/**
+ * Uploads a file and content to a random bin on 'dev.filebin.net'.
+ * 
+ * @param {string} file_name 
+ * @param {any} file_data 
+ * @returns {object} 
+ * @throws {string} 'No data given'
+ */
 async function upload(file_name, file_data) {
     return new Promise(resolve => {
         var characters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
