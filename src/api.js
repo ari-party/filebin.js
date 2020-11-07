@@ -179,4 +179,3 @@ module.exports = {
     downloadBin: downloadBin,
     getInfo: getInfo
 }
-downloadBin
