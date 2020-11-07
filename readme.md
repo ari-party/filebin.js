@@ -1,10 +1,9 @@
 # Under Development
 This package is currently being worked on, don't expect everything to work as planned.
----
 
 # filebin.js
 A javascript api for filebin.net
----
+
 ### Example Code
 #### upload
 ```js
