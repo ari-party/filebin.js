@@ -4,6 +4,8 @@ This package is currently being worked on, don't expect everything to work as pl
 
 __Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com/HashedDev/filebin.js/issues)
 
+*We do not recommend uploading large files.*
+
 # filebin.js 🗑
 
 A javascript api for filebin.net
@@ -33,5 +35,4 @@ filebin.upload("your file name", "the content of that file").then(promise => {
 
 - [X] Upload file
 - [ ] Download file
-- [ ] Download WEB file.
 - [ ] Get bin info
