@@ -1,37 +1,91 @@
-## Welcome to GitHub Pages
+# Under Development ⚠
 
-You can use the [editor on GitHub](https://github.com/HashedDev/filebin.js/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This package is currently being worked on, don't expect everything to work as planned.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+__Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com/HashedDev/filebin.js/issues).
 
-### Markdown
+*We do not recommend uploading large files.*
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# filebin.js 🗑
+A javascript api for filebin.net
 
-```markdown
-Syntax highlighted code block
+---
+### Example Code ✏
+#### upload
+```js
+const filebin = require("filebin.js")
 
-# Header 1
-## Header 2
-### Header 3
+filebin.upload("your file name", "the content of that file").then(promise => {
 
-- Bulleted
-- List
+})
 
-1. Numbered
-2. List
+// If you would log 'promise', it would return:
+{
+    bin_url: 'https://dev.filebin.net/...', // String
+    file_url: 'https://dev.filebin.net/.../...', // String
+    bin_id: '...', // String
+    file_size: ..., // Returns in bits (There will not be a 'b'for bits included.) - Integer
+    expires_in: '...' // Date (year-month-dayThour:minute:second:miliseconds) - String
+}
+```
+#### download
+```js
+const filebin = require("filebin.js")
 
-**Bold** and _Italic_ and `Code` text
+filebin.download("bin id", "file name", "path to download to").then(promise => {
 
-[Link](url) and ![Image](src)
+})
+
+// If you would log 'promise', it would return:
+"(path where it is downloaded)"
+```
+#### getInfo
+```js
+const filebin = require("filebin.js")
+
+filebin.getInfo('bin id').then(promise => {
+
+})
+
+// If you would log 'promise', it would return:
+{
+    bin_id: '...',
+    bin_size_bytes: ...,
+    bin_files_size: ...,
+    bin_files: [
+        {
+            file_name: '...',
+            file_url: 'https://dev.filebin.net/.../...',
+            file_size_bytes: ...
+        }
+    ]
+}
+```
+#### downloadBin
+```js
+const filebin = require("filebin.js")
+
+filebin.downloadBin('bin id', "path to download to").then(promise => {
+
+})
+
+// If you would log 'promise', it would return:
+{
+    path: "(path where it is downloaded)",
+    filesDownloaded: [
+        {
+            file_name: '...',
+            file_url: 'https://dev.filebin.net/.../...',
+            file_size_bytes: ...
+        }
+    ]
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+---
+## Checklist 📃
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/HashedDev/filebin.js/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- [x] Upload file
+- [x] Download file
+- [x] Get bin info
+- [x] Download Bin
