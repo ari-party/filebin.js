@@ -33,4 +33,5 @@ filebin.upload("your file name", "the content of that file").then(promise => {
 
 - [X] Upload file
 - [ ] Download file
+- [ ] Download WEB file.
 - [ ] Get bin info
