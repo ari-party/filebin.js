@@ -2,7 +2,7 @@
 
 This package is currently being worked on, don't expect everything to work as planned.
 
-__Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com/HashedDev/filebin.js/issues)
+__Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com/HashedDev/filebin.js/issues).
 
 *We do not recommend uploading large files.*
 
