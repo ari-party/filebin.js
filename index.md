@@ -7,6 +7,7 @@ __Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com
 *We do not recommend uploading large files.*
 
 # filebin.js 🗑
+
 A javascript api for filebin.net
 
 [![npm version](https://badge.fury.io/js/filebin.js.svg)](https://badge.fury.io/js/filebin.js)
@@ -29,7 +30,7 @@ filebin.upload("your file name", "the content of that file").then(promise => {
     bin_url: 'https://dev.filebin.net/...', // String
     file_url: 'https://dev.filebin.net/.../...', // String
     bin_id: '...', // String
-    file_size: ..., // Returns in bits (There will not be a 'b'for bits included.) - Integer
+    file_size: ..., // Returns in bytes (There will not be a 'b' for bytes included.) - Integer
     expires_in: '...' // Date (year-month-dayThour:minute:second:miliseconds) - String
 }
 ```
@@ -45,8 +46,8 @@ filebin.download("bin id", "file name", "path to download to").then(promise => {
 
 // If you would log 'promise', it would return:
 {
-    path: "...",
-    file_name: "..."
+    path: "...", // String
+    file_name: "..." // String
 }
 ```
 
@@ -61,14 +62,14 @@ filebin.getInfo('bin id').then(promise => {
 
 // If you would log 'promise', it would return:
 {
-    bin_id: '...',
-    bin_size_bytes: ...,
-    bin_files_size: ...,
-    bin_files: [
+    bin_id: '...', // String
+    bin_size_bytes: ..., // Returns in bytes (There will not be a 'b' for bytes included.) - Integer
+    bin_files_size: ..., // Integer
+    bin_files: [ // Array
         {
-            file_name: '...',
-            file_url: 'https://dev.filebin.net/.../...',
-            file_size_bytes: ...
+            file_name: '...', // String
+            file_url: 'https://dev.filebin.net/.../...', // String
+            file_size_bytes: ... // Returns in bytes (There will not be a 'b' for bytes included.) - Integer
         }
     ]
 }
@@ -88,9 +89,9 @@ filebin.downloadBin('bin id', "path to download to").then(promise => {
     path: "(path where it is downloaded)",
     filesDownloaded: [
         {
-            file_name: '...',
-            file_url: 'https://dev.filebin.net/.../...',
-            file_size_bytes: ...
+            file_name: '...', // String
+            file_url: 'https://dev.filebin.net/.../...', // String
+            file_size_bytes: ... // Returns in bytes (There will not be a 'b' for bytes included.) - Integer
         }
     ]
 }
@@ -104,4 +105,3 @@ filebin.downloadBin('bin id', "path to download to").then(promise => {
 - [x] Download file
 - [x] Get bin info
 - [x] Download Bin
-
