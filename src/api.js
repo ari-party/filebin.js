@@ -42,13 +42,15 @@ async function upload(file_name, file_data) {
         }, function (err, res, body) {
             var data = JSON.parse(res.body);
     
-            resolve({
-                bin_url: `https://dev.filebin.net/${data.bin.id}`,
-                file_url: `https://dev.filebin.net/${data.bin.id}/${file_name}`,
-                bin_id: data.bin.id,
-                file_size: data.file.bytes,
-                expires_in: data.bin.expired_at
-            });
+            resolve(
+                {
+                    bin_url: `https://dev.filebin.net/${data.bin.id}`,
+                    file_url: `https://dev.filebin.net/${data.bin.id}/${file_name}`,
+                    bin_id: data.bin.id,
+                    file_size: data.file.bytes,
+                    expires_in: data.bin.expired_at
+                }
+            );
         })
     })
 }
@@ -59,7 +61,7 @@ async function upload(file_name, file_data) {
  * @param {string} bin_id
  * @param {string} file_name Requires file exstension.
  * @param {string} path Path (This includes the name of the file it will go in.)
- * @returns {object} { path: "(path where it is downloaded)" }
+ * @returns {object} { path: "...", file_name: "..." }
  * @throws {object} { message: "No data given/Error" }
  */
 async function download(bin_id, file_name, path) {
@@ -84,7 +86,12 @@ async function download(bin_id, file_name, path) {
             gzip: true
         }).pipe(writeStream)
             .on("finish", () => {
-                resolve({ path: path })
+                resolve(
+                    {
+                        path: path,
+                        file_name: file_name
+                    }
+                )
             })
             .on("error", (err) => {
                 resolve(err);
@@ -97,10 +104,10 @@ async function download(bin_id, file_name, path) {
  * 
  * @param {string} bin_id
  * @param {string} path 
- * @returns {string} { path: "(path where it is downloaded)", filesDownloaded: [{ file_name: '...', file_url: 'https://dev.filebin.net/.../...', file_size_bytes: ... }] }
+ * @returns {string} { path: "...", filesDownloaded: [{ file_name: '...', file_url: 'https://dev.filebin.net/.../...', file_size_bytes: ... }] }
  * @throws {object} { message: "No data given/Error" }
  */
-async function downloadBin(bin_id, path)  {
+async function downloadBin(bin_id, path) {
     return new Promise(resolve => {
         if (!bin_id || !path) resolve({
             message: "No data given/Error"
@@ -151,24 +158,26 @@ async function getInfo(bin_id) {
             gzip: true
         }, function (err, res, body) {
             const data = JSON.parse(res.body)
-                var bin_files = []
+            var bin_files = []
                 
-                data.files.forEach(file => {
-                    bin_files.push(
-                        {
-                            file_name: file.filename,
-                            file_url: `https://dev.filebin.net/${data.bin.id}/${file.filename}`,
-                            file_size_bytes: file.bytes
-                        }
-                    )
-                })
+            data.files.forEach(file => {
+                bin_files.push(
+                    {
+                        file_name: file.filename,
+                        file_url: `https://dev.filebin.net/${data.bin.id}/${file.filename}`,
+                        file_size_bytes: file.bytes
+                    }
+                )
+            })
 
-                resolve({
+            resolve(
+                {
                     bin_id: data.bin.id,
                     bin_size_bytes: data.bin.bytes,
                     bin_files_size: data.bin.files,
                     bin_files: bin_files
-                });
+                }
+            );
         })
     })
 }

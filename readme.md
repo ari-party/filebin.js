@@ -7,11 +7,15 @@ __Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com
 *We do not recommend uploading large files.*
 
 # filebin.js 🗑
+
 A javascript api for filebin.net
 
 ---
+
 ### Example Code ✏
+
 #### upload
+
 ```js
 const filebin = require("filebin.js")
 
@@ -28,7 +32,9 @@ filebin.upload("your file name", "the content of that file").then(promise => {
     expires_in: '...' // Date (year-month-dayThour:minute:second:miliseconds) - String
 }
 ```
+
 #### download
+
 ```js
 const filebin = require("filebin.js")
 
@@ -37,9 +43,14 @@ filebin.download("bin id", "file name", "path to download to").then(promise => {
 })
 
 // If you would log 'promise', it would return:
-"(path where it is downloaded)"
+{
+    path: "...",
+    file_name: "..."
+}
 ```
+
 #### getInfo
+
 ```js
 const filebin = require("filebin.js")
 
@@ -61,7 +72,9 @@ filebin.getInfo('bin id').then(promise => {
     ]
 }
 ```
+
 #### downloadBin
+
 ```js
 const filebin = require("filebin.js")
 
@@ -83,9 +96,11 @@ filebin.downloadBin('bin id', "path to download to").then(promise => {
 ```
 
 ---
+
 ## Checklist 📃
 
 - [x] Upload file
 - [x] Download file
 - [x] Get bin info
 - [x] Download Bin
+
