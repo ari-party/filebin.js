@@ -68,3 +68,4 @@ filebin.getInfo('bin id').then(promise => {
 - [x] Upload file
 - [x] Download file
 - [x] Get bin info
+- [ ] Download Bin
