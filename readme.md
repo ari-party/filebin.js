@@ -1,6 +1,8 @@
 # Under Development ⚠
 This package is currently being worked on, don't expect everything to work as planned.
 
+__Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com/HashedDev/filebin.js/issues)
+
 # filebin.js 🗑
 A javascript api for filebin.net
 
