@@ -93,6 +93,43 @@ async function download(bin_id, file_name, path) {
 }
 
 /**
+ * Download a entire bin to a folder.
+ * 
+ * @param {string} bin_id
+ * @param {string} path 
+ * @returns {string} { path: "(path where it is downloaded)", filesDownloaded: [{ file_name: '...', file_url: 'https://dev.filebin.net/.../...', file_size_bytes: ... }] }
+ * @throws {object} { message: "No data given/Error" }
+ */
+async function downloadBin(bin_id, path)  {
+    return new Promise(resolve => {
+        if (!bin_id || !path) resolve({
+            message: "No data given/Error"
+        });
+
+        getInfo(bin_id).then(bin => {
+            const binFiles = bin.bin_files
+
+            var forEach_processed = 0
+
+            binFiles.forEach(file => {
+                forEach_processed++
+                download(bin_id, file.file_name, `${path}/${file.file_name}`)
+                if (binFiles.length === forEach_processed) return callback();
+            })
+
+            function callback() {
+                resolve(
+                    {
+                        path: path,
+                        filesDownloaded: binFiles
+                    }
+                )
+            }
+        })
+    })
+}
+
+/**
  * Get information about a bin from 'dev.filebin.net'
  * 
  * @param {string} bin_id 
@@ -139,5 +176,7 @@ async function getInfo(bin_id) {
 module.exports = {
     upload: upload,
     download: download,
+    downloadBin: downloadBin,
     getInfo: getInfo
 }
+downloadBin
