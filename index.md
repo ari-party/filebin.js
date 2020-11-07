@@ -7,8 +7,9 @@ __Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com
 *We do not recommend uploading large files.*
 
 # filebin.js 🗑
-
 A javascript api for filebin.net
+
+[![npm version](https://badge.fury.io/js/filebin.js.svg)](https://badge.fury.io/js/filebin.js)
 
 ---
 
@@ -103,3 +104,4 @@ filebin.downloadBin('bin id', "path to download to").then(promise => {
 - [x] Download file
 - [x] Get bin info
 - [x] Download Bin
+
