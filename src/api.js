@@ -34,7 +34,8 @@ async function upload(file_name, file_data) {
             var data = JSON.parse(res.body);
     
             resolve({
-                url: `https://dev.filebin.net/${data.bin.id}`,
+                bin_url: `https://dev.filebin.net/${data.bin.id}`,
+                file_url: `https://dev.filebin.net/${data.bin.id}/${file_name}`,
                 bin_id: data.bin.id,
                 file_size: data.file.bytes,
                 expires_in: data.bin.expired_at
