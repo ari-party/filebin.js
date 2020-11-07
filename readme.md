@@ -8,6 +8,7 @@ __Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com
 
 # filebin.js 🗑
 A javascript api for filebin.net
+
 [![npm version](https://badge.fury.io/js/filebin.js.svg)](https://badge.fury.io/js/filebin.js)
 
 ---
