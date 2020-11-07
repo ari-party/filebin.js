@@ -1,10 +1,10 @@
-# Under Development
+# Under Development ⚠
 This package is currently being worked on, don't expect everything to work as planned.
 
-# filebin.js
+# filebin.js 🗑
 A javascript api for filebin.net
 
-### Example Code
+### Example Code ✏
 #### upload
 ```js
 const filebin = require("filebin.js")
@@ -22,7 +22,7 @@ filebin.upload("your file name", "the content of that file").then(promise => {
 }
 ```
 
-## Checklist
+## Checklist 📃
 
 - [x] Upload file
 - [ ] Download file
