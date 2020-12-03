@@ -1,5 +1,5 @@
-const request = require("request")
-const fs = require("fs")
+const request = require("request") // To make the requests/posts to 'dev.filebin.net'.
+const fs = require("fs") // Not really used.
 
 /**
  * Uploads a file and content to a random bin on 'dev.filebin.net'.
