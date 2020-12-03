@@ -1,6 +1,6 @@
 {
   "name": "filebin.js",
-  "version": "1.1.3",
+  "version": "1.1.4-news",
   "changelog": "Added badge to/Updated readme.md",
   "description": "A javascript api for filebin.net",
   "main": "src/api.js",
