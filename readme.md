@@ -2,6 +2,8 @@
 
 This package is currently being worked on, don't expect everything to work as planned.
 
+*I've currently stopped development on the module as there are no issues, nor suggestions.*
+
 __Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com/HashedDev/filebin.js/issues).
 
 *We do not recommend uploading large files.*
