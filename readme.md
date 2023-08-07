@@ -1,21 +1,13 @@
-# Under Development ⚠
-
-This package is currently being worked on, don't expect everything to work as planned.
-
-*I've currently stopped development on the module as there are no issues, nor suggestions.*
-
-__Note:__ Bugs as suggestions can be told in the [issues tab](https://github.com/HashedDev/filebin.js/issues).
-
-*We do not recommend uploading large files.*
-
+# Deprecated
 # filebin.js 🗑
-A javascript api for filebin.net
+A javascript api for filebin.net<br/>
+I made this when I was relatively young, don't take it for granted
 
 [![npm version](https://badge.fury.io/js/filebin.js.svg)](https://badge.fury.io/js/filebin.js)
 
 ---
 
-### Example Code ✏
+### Example ✏
 
 #### upload
 
@@ -97,13 +89,3 @@ filebin.downloadBin('bin id', "path to download to").then(promise => {
     ]
 }
 ```
-
----
-
-## Checklist 📃
-
-- [x] Upload file
-- [x] Download file
-- [x] Get bin info
-- [x] Download Bin
-
